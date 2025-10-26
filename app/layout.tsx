@@ -6,6 +6,7 @@ import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { CartProvider } from "@/lib/cart-context"
 import { Toaster } from "@/components/ui/toaster"
+import { AICopilot } from "@/components/ai-copilot"
 import "./globals.css"
 
 const _playfairDisplay = Playfair_Display({ subsets: ["latin"] })
@@ -29,6 +30,7 @@ export default function RootLayout({
           <Header className={_playfairDisplay.className} />
           {children}
           <Footer />
+          <AICopilot />
           <Toaster />
         </CartProvider>
         <Analytics />

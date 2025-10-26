@@ -8,6 +8,7 @@ import { ShoppingCart, Heart, Truck, Shield, RotateCcw } from "lucide-react"
 import { useCart } from "@/lib/cart-context"
 import { useToast } from "@/hooks/use-toast"
 import { mockProducts } from "@/lib/mock-data"
+import { SellerChat } from "@/components/seller-chat"
 
 interface ProductDetailProps {
   productId: string
@@ -83,6 +84,14 @@ export function ProductDetail({ productId }: ProductDetailProps) {
           <Button size="lg" variant="outline">
             <Heart className="h-5 w-5" />
           </Button>
+        </div>
+
+        <div className="pt-2">
+          <SellerChat
+            sellerId={`seller-${product.id}`}
+            sellerName="Premium Electronics Store"
+            productName={product.name}
+          />
         </div>
 
         <Card className="p-4 space-y-3">
