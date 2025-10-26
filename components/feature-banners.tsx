@@ -1,68 +1,120 @@
 import { Check, Zap, Shield, Truck } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { ProductCard } from "@/components/product-card"
+import { mockProducts } from "@/lib/mock-data"
 
 export function FeatureBanners() {
+  const localProducts = mockProducts.filter((p) => p.isLocal).slice(0, 4)
+  const guaranteedProducts = mockProducts.filter((p) => p.deliveryDate).slice(0, 4)
+  const customProducts = mockProducts.slice(0, 4)
+
   return (
-    <section className="py-16 bg-white">
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {/* MarketHub Guaranteed */}
-          <div className="bg-gradient-to-br from-red-700 to-red-900 rounded-2xl p-8 text-white">
-            <h3 className="text-2xl font-bold mb-6">MarketHub Guaranteed</h3>
-            <div className="space-y-3 mb-6">
+    <div className="space-y-6">
+      {/* Recommended for your business divider */}
+      <div className="flex items-center gap-4 py-4">
+        <div className="flex-1 h-px bg-gray-300"></div>
+        <span className="text-gray-500 text-sm">Recommended for your business</span>
+        <div className="flex-1 h-px bg-gray-300"></div>
+      </div>
+
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        {/* US Local Stock Banner */}
+        <div className="bg-gradient-to-br from-red-800 to-red-900 rounded-lg p-6 text-white relative overflow-hidden">
+          <div className="relative z-10">
+            <div className="flex items-center gap-2 mb-4">
+              <span className="text-2xl">🇺🇸</span>
+              <h3 className="text-2xl font-bold">US local stock</h3>
+            </div>
+            <div className="space-y-2 mb-6">
               <div className="flex items-center gap-2">
-                <Check className="h-5 w-5" />
-                <span>Quick order and pay</span>
+                <Check className="h-4 w-4" />
+                <span className="text-sm">Fastest delivery in 5 days</span>
               </div>
               <div className="flex items-center gap-2">
-                <Truck className="h-5 w-5" />
-                <span>On-time delivery</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Shield className="h-5 w-5" />
-                <span>Money-back guarantee</span>
+                <Check className="h-4 w-4" />
+                <span className="text-sm">No import charges</span>
               </div>
             </div>
-            <Button variant="secondary" className="bg-white/20 hover:bg-white/30 text-white border-white/30">
+            <Button variant="secondary" className="bg-white/20 hover:bg-white/30 text-white border-white/30 mb-6">
               Explore now
             </Button>
-            <div className="flex gap-3 mt-6">
-              <div className="w-16 h-16 bg-white/20 rounded-lg" />
-              <div className="w-16 h-16 bg-white/20 rounded-lg" />
-              <div className="w-16 h-16 bg-white/20 rounded-lg" />
-              <div className="w-16 h-16 bg-white/20 rounded-lg" />
+
+            {/* Product Thumbnails */}
+            <div className="grid grid-cols-4 gap-3">
+              {localProducts.map((product) => (
+                <ProductCard key={product.id} product={product} variant="alibaba" />
+              ))}
             </div>
           </div>
+        </div>
 
-          {/* Fast Customization */}
-          <div className="bg-gradient-to-br from-purple-600 to-purple-800 rounded-2xl p-8 text-white">
-            <h3 className="text-2xl font-bold mb-6">Fast Customization</h3>
-            <div className="space-y-3 mb-6">
+        {/* Alibaba Guaranteed Banner */}
+        <div className="bg-gradient-to-br from-red-700 to-red-800 rounded-lg p-6 text-white relative overflow-hidden">
+          <div className="relative z-10">
+            <h3 className="text-2xl font-bold mb-4">
+              <span className="text-orange-400">Alibaba</span> Guaranteed
+            </h3>
+            <div className="space-y-2 mb-6">
               <div className="flex items-center gap-2">
-                <Zap className="h-5 w-5" />
-                <span>Low MOQ</span>
+                <Check className="h-4 w-4" />
+                <span className="text-sm">Quick order and pay</span>
               </div>
               <div className="flex items-center gap-2">
-                <Check className="h-5 w-5" />
-                <span>14-day dispatch</span>
+                <Truck className="h-4 w-4" />
+                <span className="text-sm">On-time delivery</span>
               </div>
               <div className="flex items-center gap-2">
-                <Shield className="h-5 w-5" />
-                <span>Print to design</span>
+                <Shield className="h-4 w-4" />
+                <span className="text-sm">Money-back guarantee</span>
               </div>
             </div>
-            <Button variant="secondary" className="bg-white/20 hover:bg-white/30 text-white border-white/30">
+            <Button variant="secondary" className="bg-white/20 hover:bg-white/30 text-white border-white/30 mb-6">
               Explore now
             </Button>
-            <div className="flex gap-3 mt-6">
-              <div className="w-16 h-16 bg-white/20 rounded-lg" />
-              <div className="w-16 h-16 bg-white/20 rounded-lg" />
-              <div className="w-16 h-16 bg-white/20 rounded-lg" />
-              <div className="w-16 h-16 bg-white/20 rounded-lg" />
+
+            {/* Product Thumbnails */}
+            <div className="grid grid-cols-4 gap-3">
+              {guaranteedProducts.map((product) => (
+                <ProductCard key={product.id} product={product} variant="alibaba" />
+              ))}
             </div>
           </div>
         </div>
       </div>
-    </section>
+
+      {/* Fast Customization Banner - Full Width */}
+      <div className="bg-gradient-to-br from-purple-600 to-purple-800 rounded-lg p-6 text-white relative overflow-hidden">
+        <div className="relative z-10">
+          <div className="flex items-center gap-2 mb-4">
+            <Zap className="h-6 w-6" />
+            <h3 className="text-2xl font-bold">Fast customization</h3>
+          </div>
+          <div className="flex gap-8 mb-6">
+            <div className="flex items-center gap-2">
+              <Check className="h-4 w-4" />
+              <span className="text-sm">Low MOQ</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <Check className="h-4 w-4" />
+              <span className="text-sm">14-day dispatch</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <Check className="h-4 w-4" />
+              <span className="text-sm">Print to design</span>
+            </div>
+          </div>
+          <Button variant="secondary" className="bg-white/20 hover:bg-white/30 text-white border-white/30 mb-6">
+            Explore now
+          </Button>
+
+          {/* Product Thumbnails */}
+          <div className="grid grid-cols-4 gap-3 max-w-md">
+            {customProducts.map((product) => (
+              <ProductCard key={product.id} product={product} variant="alibaba" />
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
   )
 }
