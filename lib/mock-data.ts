@@ -8,7 +8,7 @@ export const mockProducts: Product[] = [
     price: 199.99,
     originalPrice: 299.99,
     discount: 33,
-    image: "/premium-wireless-headphones.png",
+    image: "/premium-wireless-headphones-yellow.jpg",
     category: "electronics",
     stock: 15,
     badge: "BEST SELLER",
@@ -16,6 +16,58 @@ export const mockProducts: Product[] = [
     reviews: 342,
     soldCount: 840,
     deliveryDate: "Delivery by Nov 20",
+    images: [
+      "/premium-wireless-headphones-yellow.jpg",
+      "/premium-wireless-headphones-yellow.jpg",
+      "/premium-wireless-headphones-yellow.jpg",
+      "/premium-wireless-headphones-yellow.jpg",
+      "/premium-wireless-headphones-yellow.jpg",
+    ],
+    supplier: {
+      name: "Chongqing Dolan Trading Co., Ltd.",
+      yearsOnAlibaba: 2,
+      location: "CN",
+      onTimeDeliveryRate: 96.6,
+      responseTime: "≤5h",
+    },
+    attributes: {
+      "Image Sensor": "CMOS",
+      "optical zoom": "< 2x",
+      "image stabilization": "Optical Image Stabilization",
+      type: "mirrorless cameras",
+      "battery type": "Lithium battery",
+      Material: "ABS",
+      "video format": "Yes",
+      Portable: "Yes",
+      "Brushless motor": "No",
+    },
+    variations: [
+      {
+        type: "model number",
+        options: [
+          { label: "D810", value: "d810", image: "/premium-wireless-headphones-yellow.jpg" },
+          { label: "D850", value: "d850", image: "/premium-wireless-headphones-yellow.jpg" },
+        ],
+      },
+      {
+        type: "color",
+        options: [
+          { label: "Black", value: "black" },
+          { label: "Silver", value: "silver" },
+        ],
+      },
+      {
+        type: "megapixel",
+        options: [
+          { label: "5-24.0MP", value: "5-24" },
+          { label: "24-36MP", value: "24-36" },
+        ],
+      },
+    ],
+    shippingInfo: {
+      express: { cost: 4.5, days: "9-15 business days" },
+    },
+    moq: 1,
   },
   {
     id: "2",

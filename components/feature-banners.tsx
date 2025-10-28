@@ -9,14 +9,7 @@ export function FeatureBanners() {
   const customProducts = mockProducts.slice(0, 4)
 
   return (
-    <div className="space-y-6">
-      {/* Recommended for your business divider */}
-      <div className="flex items-center gap-4 py-4">
-        <div className="flex-1 h-px bg-gray-300"></div>
-        <span className="text-gray-500 text-sm">Recommended for your business</span>
-        <div className="flex-1 h-px bg-gray-300"></div>
-      </div>
-
+    <div className="space-y-6 max-w-6xl">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* US Local Stock Banner */}
         <div className="bg-gradient-to-br from-red-800 to-red-900 rounded-lg p-6 text-white relative overflow-hidden">
@@ -82,7 +75,7 @@ export function FeatureBanners() {
         </div>
       </div>
 
-      {/* Fast Customization Banner - Full Width */}
+      {/* Fast Customization Banner */}
       <div className="bg-gradient-to-br from-purple-600 to-purple-800 rounded-lg p-6 text-white relative overflow-hidden">
         <div className="relative z-10">
           <div className="flex items-center gap-2 mb-4">

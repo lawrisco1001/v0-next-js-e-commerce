@@ -77,9 +77,11 @@ export function Header() {
                 <Search className="h-5 w-5" />
               </Button>
 
-              <Button variant="ghost" size="icon">
-                <User className="h-5 w-5" />
-              </Button>
+              <Link href="/login">
+                <Button variant="ghost" size="icon">
+                  <User className="h-5 w-5" />
+                </Button>
+              </Link>
 
               <Link href="/cart">
                 <Button variant="ghost" size="icon" className="relative">

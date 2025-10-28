@@ -69,6 +69,12 @@ export default function ProductsPage() {
               </div>
             </div>
 
+            <div className="flex items-center gap-4 py-8 max-w-6xl">
+              <div className="flex-1 h-px bg-gray-200"></div>
+              <span className="text-gray-400 text-sm font-medium whitespace-nowrap">Recommended for your business</span>
+              <div className="flex-1 h-px bg-gray-200"></div>
+            </div>
+
             <FeatureBanners />
 
             <TopDeals />
